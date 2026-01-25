@@ -40,8 +40,4 @@ The filter geometry is defined by the following optimized parameters:
 * **Metallization**: Annealed Copper with thickness **$t = 0.018\ mm$**.
 * **Port Analysis**: Quasi-TEM mode analysis performed across the **$4-6\ GHz$** frequency range.
 
-## 📋 Getting Started
 
-1. **Clone the Repository**:
-   ```bash
-   git clone [https://github.com/omer-acarr/stepped-impedance-lpf.git](https://github.com/omer-acarr/stepped-impedance-lpf.git)

@@ -1,43 +1,63 @@
-# 📡 Microstrip Stepped-Impedance LPF Designer
+# 📡 Microstrip Stepped-Impedance LPF Design
 
 ![Software](https://img.shields.io/badge/Software-CST_Studio_Suite_2025-blue?style=flat-square&logo=dassaultsystemes)
 ![Material](https://img.shields.io/badge/Material-Rogers_RO4003C-orange?style=flat-square)
 ![Domain](https://img.shields.io/badge/Domain-RF_/_Microwave-green?style=flat-square)
 ![Analysis](https://img.shields.io/badge/Analysis-EM_Simulation-red?style=flat-square)
 
-An electromagnetic design and high-fidelity simulation of a **Microstrip Stepped-Impedance Low-Pass Filter (LPF)**, optimized for high-frequency defense and communication systems. This project represents the transition from theoretical microwave synthesis to 3D electromagnetic verification using industrial-grade materials.
+This repository contains the design, simulation, and performance analysis of a **Microstrip Stepped-Impedance Low Pass Filter** developed in **CST Studio Suite 2025**.
 
-## 🎯 Project Motivation
+## 📌 Project Overview
+Stepped-impedance filters are essential components in RF/Microwave systems, providing a compact way to implement low-pass characteristics using alternating sections of high and low characteristic impedance.
 
-At microwave frequencies (GHz range), traditional lumped elements (SMD inductors and capacitors) fail due to parasitic effects. This project addresses these physical constraints by:
-* **Distributed Element Design**: Utilizing alternating high-impedance (inductive) and low-impedance (capacitive) microstrip lines to implement the filter transfer function.
-* **RO4003C Optimization**: Selecting Rogers RO4003C, a defense-standard low-loss dielectric, to ensure thermal stability and high performance.
-* **High Precision Analysis**: Accounting for fringing fields and step-discontinuity parasitics through full 3D electromagnetic analysis, unlike basic circuit simulators.
+This project focuses on a multi-section LPF designed on a high-performance **Rogers RO4003C** substrate, suitable for high-frequency applications requiring sharp roll-off and minimal insertion loss.
 
-## 🚀 Technical Highlights
+### Key Features:
+* **Filter Topology:** Stepped-Impedance (Hi-Z / Low-Z sections)
+* **Substrate Material:** Rogers RO4003C
+* **Dielectric Constant ($\varepsilon_r$):** 3.55
+* **Substrate Height ($h$):** 0.508 mm
+* **Simulation Range:** 0 - 10 GHz
 
-* **Frequency Domain Solver**: Employed for high-precision matrix inversion, achieving a solver accuracy of **$2.22 \times 10^{-09}$**.
-* **Wide-Band Mode Analysis**: Verified **Quasi-TEM** mode propagation across the **$4-6\ GHz$** band at the excitation ports.
-* **Impedance Matching**: Optimized feed lines to a characteristic impedance of **$48.51\ \Omega$** to ensure maximum power transfer.
+---
 
-## 📊 Design Parameters
+## 🛠 Design & Parameters
 
-The filter geometry is defined by the following optimized parameters:
+The filter geometry is fully parameterized, allowing for easy optimization and tuning of the cut-off frequency.
 
-* 📏 **W0 (Feed Line)**: $1.12\ mm$ for $50\ \Omega$ matching.
-* 📏 **WI (Capacitive Section)**: $4.0\ mm$ (Low-impedance section).
-* 📏 **Wh (Inductive Section)**: $0.2\ mm$ (High-impedance section).
-* 📏 **Stage Lengths**: $1.58\ mm$, $1.47\ mm$, and $2.73\ mm$ for optimized rejection.
-* 📏 **Total Length (x1)**: $13.83\ mm$.
+| Parameter | Value (mm) | Description |
+| :--- | :--- | :--- |
+| **W0** | 1.12 | 50 Ohm Feedline Width |
+| **Wl** | 4.0 | Low-Impedance (Capacitive) Width |
+| **Wh** | 0.2 | High-Impedance (Inductive) Width |
+| **h** | 0.508 | Substrate Thickness |
+| **t** | 0.018 | Copper Thickness |
+
+### 3D Model View
+![3D Layout](image_45f069.jpg) 
+
+---
+
+## 🖥 Simulation & Mesh Settings
+
+To ensure the accuracy of the electromagnetic fields, the following simulation settings were applied:
+
+* **Solver:** Transient Solver
+* **Mesh Type:** Hexahedral Mesh
+* **Total Mesh Cells:** 178,848
+* **Mesh Density:** Balanced for high-frequency accuracy at the discontinuities of the stepped sections.
 
 
 
-## 🛠️ Simulation Setup
+---
 
-* **Software Platform**: CST Studio Suite 2025.
-* **Substrate Material**: Rogers **RO4003C (lossy)**, $\epsilon_r = 3.38$.
-* **Dielectric Height ($h$)**: $1.588\ mm$.
-* **Metallization**: Annealed Copper with thickness **$t = 0.018\ mm$**.
-* **Port Analysis**: Quasi-TEM mode analysis performed across the **$4-6\ GHz$** frequency range.
+## 📊 Simulation Results
+
+The results demonstrate a clear low-pass response with a cut-off frequency near **8.5 - 9 GHz**.
+
+* **Return Loss ($S_{11}$):** Stays below -15 dB throughout the passband, indicating excellent impedance matching.
+* **Insertion Loss ($S_{21}$):** Minimal loss in the passband with a sharp transition at the stopband (~9 GHz).
+
+
 
 

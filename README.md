@@ -18,9 +18,7 @@ This project focuses on a multi-section LPF designed on a high-performance **Rog
 * **Dielectric Constant ($\varepsilon_r$):** 3.55
 * **Substrate Height ($h$):** 0.508 mm
 * **Simulation Range:** 0 - 10 GHz
-
 ---
-
 ## 🛠 Design & Parameters
 
 The filter geometry is fully parameterized, allowing for easy optimization and tuning of the cut-off frequency.
@@ -33,11 +31,7 @@ The filter geometry is fully parameterized, allowing for easy optimization and t
 | **h** | 0.508 | Substrate Thickness |
 | **t** | 0.018 | Copper Thickness |
 
-### 3D Model View
-![3D Layout](image_45f069.jpg) 
-
 ---
-
 ## 🖥 Simulation & Mesh Settings
 
 To ensure the accuracy of the electromagnetic fields, the following simulation settings were applied:
@@ -46,11 +40,7 @@ To ensure the accuracy of the electromagnetic fields, the following simulation s
 * **Mesh Type:** Hexahedral Mesh
 * **Total Mesh Cells:** 178,848
 * **Mesh Density:** Balanced for high-frequency accuracy at the discontinuities of the stepped sections.
-
-
-
 ---
-
 ## 📊 Simulation Results
 
 The results demonstrate a clear low-pass response with a cut-off frequency near **8.5 - 9 GHz**.
